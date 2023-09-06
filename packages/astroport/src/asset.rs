@@ -402,6 +402,14 @@ impl AssetInfo {
         }
     }
 
+    /// Checks whether the native coin is TokenFactory token or not.
+    pub fn is_token_factory(&self) -> bool {
+        match self {
+            AssetInfo::NativeToken { denom } => denom.to_lowercase().starts_with("factory/"),
+            AssetInfo::Token { .. } => false,
+        }
+    }
+
     /// Returns the balance of token in a pool.
     ///
     /// * **pool_addr** is the address of the contract whose token balance we check.
