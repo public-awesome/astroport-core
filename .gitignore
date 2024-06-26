@@ -20,3 +20,4 @@ target/
 /artifacts/
 /contracts/**/schema/
 /e2e/config.json
+/releases/
